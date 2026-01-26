@@ -1,0 +1,49 @@
+name: Build and Release Extensions
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build and zip Chrome extension
+        run: pnpm zip
+
+      - name: Build and zip Firefox extension
+        run: pnpm zip:firefox
+
+      - name: Upload Chrome extension
+        uses: shogo82148/actions-upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: .output/*-chrome.zip
+          asset_name: telegram-keyword-alert-${{ github.event.release.tag_name }}-chrome.zip
+          overwrite: true
+
+      - name: Upload Firefox extension
+        uses: shogo82148/actions-upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: .output/*-firefox.zip
+          asset_name: telegram-keyword-alert-${{ github.event.release.tag_name }}-firefox.zip
+          overwrite: true
