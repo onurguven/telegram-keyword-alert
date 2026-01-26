@@ -1,0 +1,489 @@
+{
+  "extName": {
+    "message": "Telegram Keyword Alert"
+  },
+  "extDescription": {
+    "message": "Keyword and user-based notifications for Telegram Web"
+  },
+  "header_helpTitle": {
+    "message": "Help"
+  },
+  "header_snoozeTitle": {
+    "message": "Snooze notifications"
+  },
+  "tabs_history": {
+    "message": "History"
+  },
+  "tabs_settings": {
+    "message": "Settings"
+  },
+  "history_title": {
+    "message": "Notification History"
+  },
+  "history_clear": {
+    "message": "Clear"
+  },
+  "history_clearConfirm": {
+    "message": "Clear all notification history?"
+  },
+  "history_cleared": {
+    "message": "History cleared"
+  },
+  "history_emptyState": {
+    "message": "No notifications yet"
+  },
+  "history_unknownChat": {
+    "message": "Unknown Chat"
+  },
+  "history_unknownSender": {
+    "message": "Unknown"
+  },
+  "settings_notifications_title": {
+    "message": "Notification Settings"
+  },
+  "settings_notifications_browser": {
+    "message": "Browser notifications"
+  },
+  "settings_notifications_toast": {
+    "message": "In-page notifications (toast)"
+  },
+  "settings_notifications_sound": {
+    "message": "Sound alert"
+  },
+  "settings_notifications_test": {
+    "message": "Test Notification"
+  },
+  "settings_notifications_toastPosition": {
+    "message": "Toast position"
+  },
+  "settings_notifications_positionTopRight": {
+    "message": "Top Right"
+  },
+  "settings_notifications_positionTopLeft": {
+    "message": "Top Left"
+  },
+  "settings_notifications_positionBottomRight": {
+    "message": "Bottom Right"
+  },
+  "settings_notifications_positionBottomLeft": {
+    "message": "Bottom Left"
+  },
+  "settings_format_title": {
+    "message": "Notification Format"
+  },
+  "settings_format_chatName": {
+    "message": "Show chat/group name"
+  },
+  "settings_format_senderName": {
+    "message": "Show sender name"
+  },
+  "settings_format_messagePreview": {
+    "message": "Show message preview"
+  },
+  "settings_format_matchedKeyword": {
+    "message": "Show matched keyword"
+  },
+  "settings_appearance_title": {
+    "message": "Appearance"
+  },
+  "settings_appearance_theme": {
+    "message": "Theme"
+  },
+  "settings_appearance_themeSystem": {
+    "message": "System"
+  },
+  "settings_appearance_themeLight": {
+    "message": "Light"
+  },
+  "settings_appearance_themeDark": {
+    "message": "Dark"
+  },
+  "settings_data_title": {
+    "message": "Data Management"
+  },
+  "settings_data_export": {
+    "message": "Export"
+  },
+  "settings_data_import": {
+    "message": "Import"
+  },
+  "settings_data_reset": {
+    "message": "Reset All Data"
+  },
+  "settings_data_resetConfirm": {
+    "message": "ALL data will be deleted and reset to defaults. Are you sure?"
+  },
+  "settings_data_exported": {
+    "message": "Data exported"
+  },
+  "settings_data_imported": {
+    "message": "Data imported successfully"
+  },
+  "settings_data_importError": {
+    "message": "Invalid file format"
+  },
+  "settings_data_fileError": {
+    "message": "Could not read file"
+  },
+  "settings_data_resetDone": {
+    "message": "All data has been reset"
+  },
+  "settings_developer_title": {
+    "message": "Developer"
+  },
+  "settings_developer_debugMode": {
+    "message": "Debug mode"
+  },
+  "settings_developer_clearCache": {
+    "message": "Clear Message Cache"
+  },
+  "settings_developer_cacheCleared": {
+    "message": "Message cache cleared"
+  },
+  "sounds_notification": {
+    "message": "Default"
+  },
+  "sounds_alert": {
+    "message": "Alert"
+  },
+  "sounds_subtle": {
+    "message": "Subtle"
+  },
+  "sounds_chime": {
+    "message": "Chime"
+  },
+  "sounds_ping": {
+    "message": "Ping"
+  },
+  "sounds_pop": {
+    "message": "Pop"
+  },
+  "sounds_bell": {
+    "message": "Bell"
+  },
+  "sounds_rising": {
+    "message": "Rising"
+  },
+  "sounds_danger": {
+    "message": "Danger"
+  },
+  "sounds_preview": {
+    "message": "Preview sound"
+  },
+  "snooze_minutes15": {
+    "message": "15 minutes"
+  },
+  "snooze_minutes30": {
+    "message": "30 minutes"
+  },
+  "snooze_hour1": {
+    "message": "1 hour"
+  },
+  "snooze_hours2": {
+    "message": "2 hours"
+  },
+  "snooze_cancel": {
+    "message": "Cancel Snooze"
+  },
+  "snooze_remaining": {
+    "message": "$1 min remaining",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "snooze_activated": {
+    "message": "Snoozed for $1 minutes",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "snooze_cancelled": {
+    "message": "Snooze cancelled"
+  },
+  "test_sending": {
+    "message": "Sending notification..."
+  },
+  "test_success": {
+    "message": "Test notification sent! Check your system notifications."
+  },
+  "test_error": {
+    "message": "Could not send notification"
+  },
+  "common_error": {
+    "message": "Error"
+  },
+  "common_back": {
+    "message": "Back"
+  },
+  "common_save": {
+    "message": "Save"
+  },
+  "common_userId": {
+    "message": "ID"
+  },
+  "toast_userIdCopied": {
+    "message": "ID copied!"
+  },
+  "toast_chatPrefix": {
+    "message": "in"
+  },
+  "notification_testMessage": {
+    "message": "This is a test notification"
+  },
+  "status_error": {
+    "message": "Error"
+  },
+  "status_noTabs": {
+    "message": "No Telegram tabs"
+  },
+  "status_tabsActive": {
+    "message": "$1/$2 tabs active",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "status_unknown": {
+    "message": "Unknown chat"
+  },
+  "status_andMore": {
+    "message": "... and $1 more",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "rules_title": {
+    "message": "Rules"
+  },
+  "rules_add": {
+    "message": "Add Rule"
+  },
+  "rules_edit": {
+    "message": "Edit Rule"
+  },
+  "rules_empty": {
+    "message": "No rules yet. Add one to get started!"
+  },
+  "rules_name": {
+    "message": "Rule Name"
+  },
+  "rules_namePlaceholder": {
+    "message": "e.g. Urgent Alerts"
+  },
+  "rules_keywords": {
+    "message": "Keywords"
+  },
+  "rules_keywordsHint": {
+    "message": "One keyword per line"
+  },
+  "rules_users": {
+    "message": "Users"
+  },
+  "rules_usersHint": {
+    "message": "Add users to watch"
+  },
+  "rules_chats": {
+    "message": "Chats"
+  },
+  "rules_chatsHint": {
+    "message": "Leave empty to watch all chats"
+  },
+  "rules_sound": {
+    "message": "Sound"
+  },
+  "rules_color": {
+    "message": "Color"
+  },
+  "rules_enabled": {
+    "message": "Enabled"
+  },
+  "rules_delete": {
+    "message": "Delete"
+  },
+  "rules_deleteConfirm": {
+    "message": "Delete this rule?"
+  },
+  "rules_allChats": {
+    "message": "All chats"
+  },
+  "rules_deleted": {
+    "message": "Rule deleted"
+  },
+  "rules_added": {
+    "message": "Rule added"
+  },
+  "rules_updated": {
+    "message": "Rule updated"
+  },
+  "rules_enterName": {
+    "message": "Please enter a rule name"
+  },
+  "rules_addUser": {
+    "message": "Add User"
+  },
+  "rules_addChat": {
+    "message": "Add Chat"
+  },
+  "rules_userPlaceholder": {
+    "message": "Display name or User ID"
+  },
+  "rules_chatPlaceholder": {
+    "message": "Chat/Group name"
+  },
+  "rules_noKeywordsOrUsers": {
+    "message": "Add at least one keyword or user"
+  },
+  "rules_userExists": {
+    "message": "User already added"
+  },
+  "rules_chatExists": {
+    "message": "Chat already added"
+  },
+  "rules_selectType": {
+    "message": "Select Rule Type"
+  },
+  "rules_ruleType": {
+    "message": "Rule Type"
+  },
+  "rules_keywordRule": {
+    "message": "Keyword Rule"
+  },
+  "rules_keywordRuleDesc": {
+    "message": "Get notified when specific keywords appear in messages"
+  },
+  "rules_userRule": {
+    "message": "User Rule"
+  },
+  "rules_userRuleDesc": {
+    "message": "Get notified when specific users send any message"
+  },
+  "rules_keywordsPlaceholder": {
+    "message": "e.g. urgent, meeting, @mention"
+  },
+  "rules_usersPlaceholder": {
+    "message": "e.g. John Doe or 123456789"
+  },
+  "rules_noKeywords": {
+    "message": "Add at least one keyword"
+  },
+  "rules_noUsers": {
+    "message": "Add at least one user"
+  },
+  "rules_sectionConditions": {
+    "message": "Conditions"
+  },
+  "rules_sectionFilters": {
+    "message": "Filters"
+  },
+  "rules_sectionNotification": {
+    "message": "Notification"
+  },
+  "rules_matchAny": {
+    "message": "OR"
+  },
+  "rules_matchAll": {
+    "message": "AND"
+  },
+  "activeTabs_noTabs": {
+    "message": "No Telegram tabs open"
+  },
+  "activeTabs_clickToFocus": {
+    "message": "Click to focus"
+  },
+  "help_pageTitle": {
+    "message": "Telegram Keyword Alert - Help"
+  },
+  "help_title": {
+    "message": "Welcome to Telegram Keyword Alert"
+  },
+  "help_subtitle": {
+    "message": "Get notified when specific keywords or users appear in Telegram Web"
+  },
+  "help_gettingStarted": {
+    "message": "Getting Started"
+  },
+  "help_step1Title": {
+    "message": "Open Telegram Web"
+  },
+  "help_step1Prefix": {
+    "message": "Go to "
+  },
+  "help_step1Suffix": {
+    "message": " and log in."
+  },
+  "help_step2Title": {
+    "message": "Enable Notifications"
+  },
+  "help_step2Desc": {
+    "message": "Allow browser notifications to receive alerts."
+  },
+  "help_enableNotifications": {
+    "message": "Enable Notifications"
+  },
+  "help_notificationsEnabled": {
+    "message": "Notifications enabled"
+  },
+  "help_notificationsBlocked": {
+    "message": "Blocked by browser"
+  },
+  "help_notificationsBlockedHint": {
+    "message": "Enable in browser settings"
+  },
+  "help_notificationsUnsupported": {
+    "message": "Not supported in this browser"
+  },
+  "help_notificationsTestMessage": {
+    "message": "Notifications are now enabled!"
+  },
+  "help_step3Title": {
+    "message": "Add Rules"
+  },
+  "help_step3Desc": {
+    "message": "Click the extension icon and create rules for keywords or users."
+  },
+  "help_features": {
+    "message": "Features"
+  },
+  "help_featureKeywords": {
+    "message": "Keyword Groups"
+  },
+  "help_featureKeywordsDesc": {
+    "message": "Create groups with different colors and sounds for organizing your keywords."
+  },
+  "help_featureUsers": {
+    "message": "Watch Users"
+  },
+  "help_featureUsersDesc": {
+    "message": "Get notified when specific users send any message."
+  },
+  "help_featureChats": {
+    "message": "Filter Chats"
+  },
+  "help_featureChatsDesc": {
+    "message": "Choose which chats to monitor, or watch all chats."
+  },
+  "help_featureSnooze": {
+    "message": "Snooze"
+  },
+  "help_featureSnoozeDesc": {
+    "message": "Temporarily pause all notifications when you need focus time."
+  },
+  "help_dataManagement": {
+    "message": "Data Management"
+  },
+  "help_dataManagementDesc": {
+    "message": "Export your settings to back them up, import from a backup, or reset to defaults."
+  },
+  "help_links": {
+    "message": "Links"
+  },
+  "help_github": {
+    "message": "GitHub Repository"
+  },
+  "help_issues": {
+    "message": "Report Issues / Feedback"
+  },
+  "help_version": {
+    "message": "Version 2.0.0"
+  }
+}

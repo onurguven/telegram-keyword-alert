@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Keyword Alert</title>
+  <meta name="manifest.type" content="browser_action" />
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <img src="/icons/48.png" alt="TKA" class="header-icon">
+        <span id="status-badge" class="status-badge loading">
+          <span class="status-badge-spinner"></span>
+          <span class="status-badge-dot"></span>
+          <span class="status-badge-text">...</span>
+        </span>
+      </div>
+      <div class="header-actions">
+        <button id="btn-history" class="btn-icon" data-i18n-title="tabs_history" title="History">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </button>
+        <button id="btn-settings" class="btn-icon" data-i18n-title="tabs_settings" title="Settings">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+        <button id="btn-snooze" class="btn-icon" data-i18n-title="header_snoozeTitle" title="Snooze">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </button>
+        <button id="btn-help" class="btn-icon" data-i18n-title="header_helpTitle" title="Help">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+            <circle cx="12" cy="17" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Active Telegram Tabs (Horizontal Chips) -->
+    <div class="active-tabs-bar">
+      <div id="active-tabs" class="active-tabs">
+        <span class="no-tabs-message" data-i18n="activeTabs_noTabs">No Telegram tabs open</span>
+      </div>
+    </div>
+
+    <!-- Snooze Menu (hidden by default) -->
+    <div id="snooze-menu" class="snooze-menu hidden">
+      <div class="snooze-status" id="snooze-status"></div>
+      <button data-minutes="15" data-i18n="snooze_minutes15">15 minutes</button>
+      <button data-minutes="30" data-i18n="snooze_minutes30">30 minutes</button>
+      <button data-minutes="60" data-i18n="snooze_hour1">1 hour</button>
+      <button data-minutes="120" data-i18n="snooze_hours2">2 hours</button>
+      <button data-minutes="0" class="cancel" data-i18n="snooze_cancel">Cancel Snooze</button>
+    </div>
+
+    <!-- Main Content: Rules -->
+    <main class="main-content">
+      <div class="rules-header">
+        <h2 data-i18n="rules_title">Rules</h2>
+        <button id="btn-add-rule" class="btn-primary btn-small">
+          <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          <span data-i18n="rules_add">Add Rule</span>
+        </button>
+      </div>
+      <div id="rules-list" class="rules-list">
+        <!-- Rules will be rendered here -->
+      </div>
+      <div id="rules-empty" class="empty-state hidden">
+        <p data-i18n="rules_empty">No rules yet. Add one to get started!</p>
+      </div>
+    </main>
+
+    <!-- History Panel (slide-in) -->
+    <div id="panel-history" class="panel hidden">
+      <div class="panel-header">
+        <button class="btn-back" data-panel-close>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          <span class="btn-back-label" data-i18n="common_back">Back</span>
+        </button>
+        <h3 data-i18n="history_title">Notification History</h3>
+        <button id="btn-clear-history" class="btn-text btn-danger" data-i18n="history_clear">Clear</button>
+      </div>
+      <div class="panel-content">
+        <div id="history-list" class="history-list"></div>
+        <div id="history-empty" class="empty-state hidden">
+          <p data-i18n="history_emptyState">No notifications yet</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Panel (slide-in) -->
+    <div id="panel-settings" class="panel hidden">
+      <div class="panel-header">
+        <button class="btn-back" data-panel-close>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          <span class="btn-back-label" data-i18n="common_back">Back</span>
+        </button>
+        <h3 data-i18n="tabs_settings">Settings</h3>
+        <div class="spacer"></div>
+      </div>
+      <div class="panel-content">
+        <div class="section">
+          <h4 data-i18n="settings_notifications_title">Notifications</h4>
+          <label class="toggle-item">
+            <input type="checkbox" id="setting-browser-notifications" data-setting="browserNotifications" checked>
+            <span data-i18n="settings_notifications_browser">Browser notifications</span>
+          </label>
+          <label class="toggle-item">
+            <input type="checkbox" id="setting-toast-notifications" data-setting="toastNotifications" checked>
+            <span data-i18n="settings_notifications_toast">In-page notifications (toast)</span>
+          </label>
+          <label class="toggle-item">
+            <input type="checkbox" id="setting-sound" data-setting="soundEnabled" checked>
+            <span data-i18n="settings_notifications_sound">Sound alert</span>
+          </label>
+          <div class="form-group">
+            <label data-i18n="settings_notifications_toastPosition">Toast position</label>
+            <div class="position-selector">
+              <button class="position-option" data-position="top-left">
+                <span data-i18n="settings_notifications_positionTopLeft">Top Left</span>
+              </button>
+              <button class="position-option active" data-position="top-right">
+                <span data-i18n="settings_notifications_positionTopRight">Top Right</span>
+              </button>
+              <button class="position-option" data-position="bottom-left">
+                <span data-i18n="settings_notifications_positionBottomLeft">Bottom Left</span>
+              </button>
+              <button class="position-option" data-position="bottom-right">
+                <span data-i18n="settings_notifications_positionBottomRight">Bottom Right</span>
+              </button>
+            </div>
+          </div>
+          <button id="btn-test" class="btn-secondary btn-block" data-i18n="settings_notifications_test">Test Notification</button>
+        </div>
+
+        <div class="section">
+          <h4 data-i18n="settings_format_title">Format</h4>
+          <label class="toggle-item">
+            <input type="checkbox" id="format-chat-name" data-setting="showChatName" checked>
+            <span data-i18n="settings_format_chatName">Show chat/group name</span>
+          </label>
+          <label class="toggle-item">
+            <input type="checkbox" id="format-sender-name" data-setting="showSenderName" checked>
+            <span data-i18n="settings_format_senderName">Show sender name</span>
+          </label>
+          <label class="toggle-item">
+            <input type="checkbox" id="format-message-preview" data-setting="showMessagePreview" checked>
+            <span data-i18n="settings_format_messagePreview">Show message preview</span>
+          </label>
+          <label class="toggle-item">
+            <input type="checkbox" id="format-matched-keyword" data-setting="showMatchedKeyword" checked>
+            <span data-i18n="settings_format_matchedKeyword">Show matched keyword</span>
+          </label>
+        </div>
+
+        <div class="section">
+          <h4 data-i18n="settings_appearance_title">Appearance</h4>
+          <div class="form-group">
+            <label data-i18n="settings_appearance_theme">Theme</label>
+            <div class="theme-selector">
+              <button class="theme-option active" data-theme="system">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                <span data-i18n="settings_appearance_themeSystem">System</span>
+              </button>
+              <button class="theme-option" data-theme="light">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="5"/>
+                  <line x1="12" y1="1" x2="12" y2="3"/>
+                  <line x1="12" y1="21" x2="12" y2="23"/>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                  <line x1="1" y1="12" x2="3" y2="12"/>
+                  <line x1="21" y1="12" x2="23" y2="12"/>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <span data-i18n="settings_appearance_themeLight">Light</span>
+              </button>
+              <button class="theme-option" data-theme="dark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <span data-i18n="settings_appearance_themeDark">Dark</span>
+              </button>
+            </div>
+          </div>
+          <!-- Language selector removed - browser controls language now -->
+        </div>
+
+        <div class="section">
+          <h4 data-i18n="settings_data_title">Data</h4>
+          <div class="button-row">
+            <button id="btn-export" class="btn-secondary" data-i18n="settings_data_export">Export</button>
+            <button id="btn-import" class="btn-secondary" data-i18n="settings_data_import">Import</button>
+          </div>
+          <button id="btn-reset" class="btn-danger btn-block" data-i18n="settings_data_reset">Reset All Data</button>
+        </div>
+
+        <div class="section">
+          <h4 data-i18n="settings_developer_title">Developer</h4>
+          <label class="toggle-item">
+            <input type="checkbox" id="setting-debug-mode" data-setting="debugMode">
+            <span data-i18n="settings_developer_debugMode">Debug mode (console logs)</span>
+          </label>
+          <button id="btn-clear-cache" class="btn-secondary btn-block hidden" data-i18n="settings_developer_clearCache">Clear Message Cache</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rule Edit Panel (slide-in) -->
+    <div id="panel-rule-edit" class="panel hidden">
+      <div class="panel-header">
+        <button class="btn-back" data-panel-close>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          <span class="btn-back-label" data-i18n="common_back">Back</span>
+        </button>
+        <h3 id="rule-panel-title" data-i18n="rules_add">Add Rule</h3>
+        <button id="btn-save-rule" class="btn-text btn-primary" data-i18n="common_save">Save</button>
+      </div>
+      <div class="panel-content">
+        <input type="hidden" id="edit-rule-id">
+
+        <div class="form-group">
+          <label data-i18n="rules_name">Rule Name</label>
+          <input type="text" id="rule-name" data-i18n-placeholder="rules_namePlaceholder" placeholder="e.g. Urgent Alerts">
+        </div>
+
+        <!-- Conditions Section -->
+        <div class="form-section">
+          <div class="form-section-header">
+            <span class="form-section-title" data-i18n="rules_sectionConditions">Conditions</span>
+          </div>
+          <div class="form-section-content">
+            <div class="form-group">
+              <label data-i18n="rules_keywords">Keywords</label>
+              <textarea id="rule-keywords" rows="3" data-i18n-placeholder="rules_keywordsPlaceholder" placeholder="e.g. urgent, meeting, @mention"></textarea>
+              <p class="hint" data-i18n="rules_keywordsHint">One keyword per line</p>
+            </div>
+            <div class="match-mode-divider">
+              <span class="match-mode-line"></span>
+              <div class="match-mode-toggle">
+                <button type="button" class="match-mode-btn active" data-mode="any" data-i18n="rules_matchAny">OR</button>
+                <button type="button" class="match-mode-btn" data-mode="all" data-i18n="rules_matchAll">AND</button>
+              </div>
+              <span class="match-mode-line"></span>
+            </div>
+            <div class="form-group">
+              <label data-i18n="rules_users">Users</label>
+              <div class="chip-input" id="users-chip-input">
+                <div id="rule-users-list" class="chip-input-tags"></div>
+                <input type="text" id="rule-user-input" data-i18n-placeholder="rules_usersPlaceholder" placeholder="e.g. John Doe or 123456789">
+              </div>
+              <p class="hint" data-i18n="rules_usersHint">Add users to watch</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters Section -->
+        <div class="form-section">
+          <div class="form-section-header">
+            <span class="form-section-title" data-i18n="rules_sectionFilters">Filters</span>
+          </div>
+          <div class="form-section-content">
+            <div class="form-group">
+              <label data-i18n="rules_chats">Chats</label>
+              <div class="chip-input" id="chats-chip-input">
+                <div id="rule-chats-list" class="chip-input-tags"></div>
+                <input type="text" id="rule-chat-input" data-i18n-placeholder="rules_chatPlaceholder" placeholder="Chat/Group name">
+              </div>
+              <p class="hint" data-i18n="rules_chatsHint">Leave empty to watch all chats</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notification Section -->
+        <div class="form-section">
+          <div class="form-section-header">
+            <span class="form-section-title" data-i18n="rules_sectionNotification">Notification</span>
+          </div>
+          <div class="form-section-content">
+            <div class="form-group">
+              <label data-i18n="rules_color">Color</label>
+              <input type="hidden" id="rule-color" value="#3390ec">
+              <div id="color-presets" class="color-presets"></div>
+            </div>
+            <div class="form-group">
+              <label data-i18n="rules_sound">Sound</label>
+              <div class="sound-selector">
+                <select id="rule-sound">
+                  <option value="notification" data-i18n="sounds_notification">Default</option>
+                  <option value="alert" data-i18n="sounds_alert">Alert</option>
+                  <option value="subtle" data-i18n="sounds_subtle">Subtle</option>
+                  <option value="chime" data-i18n="sounds_chime">Chime</option>
+                  <option value="ping" data-i18n="sounds_ping">Ping</option>
+                  <option value="pop" data-i18n="sounds_pop">Pop</option>
+                  <option value="bell" data-i18n="sounds_bell">Bell</option>
+                  <option value="rising" data-i18n="sounds_rising">Rising</option>
+                  <option value="danger" data-i18n="sounds_danger">Danger</option>
+                </select>
+                <button type="button" id="btn-preview-sound" class="btn-icon-small" data-i18n-title="sounds_preview" title="Preview">
+                  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <polygon points="5 3 19 12 5 21 5 3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>

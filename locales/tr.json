@@ -1,0 +1,489 @@
+{
+  "extName": {
+    "message": "Telegram Keyword Alert"
+  },
+  "extDescription": {
+    "message": "Telegram Web için kelime ve kullanıcı bazlı bildirimler"
+  },
+  "header_helpTitle": {
+    "message": "Yardım"
+  },
+  "header_snoozeTitle": {
+    "message": "Bildirimleri sustur"
+  },
+  "tabs_history": {
+    "message": "Geçmiş"
+  },
+  "tabs_settings": {
+    "message": "Ayarlar"
+  },
+  "history_title": {
+    "message": "Bildirim Geçmişi"
+  },
+  "history_clear": {
+    "message": "Temizle"
+  },
+  "history_clearConfirm": {
+    "message": "Tüm bildirim geçmişi silinsin mi?"
+  },
+  "history_cleared": {
+    "message": "Geçmiş temizlendi"
+  },
+  "history_emptyState": {
+    "message": "Henüz bildirim yok"
+  },
+  "history_unknownChat": {
+    "message": "Bilinmeyen Chat"
+  },
+  "history_unknownSender": {
+    "message": "Bilinmeyen"
+  },
+  "settings_notifications_title": {
+    "message": "Bildirim Ayarları"
+  },
+  "settings_notifications_browser": {
+    "message": "Tarayıcı bildirimleri"
+  },
+  "settings_notifications_toast": {
+    "message": "Sayfa içi bildirimler (toast)"
+  },
+  "settings_notifications_sound": {
+    "message": "Ses uyarısı"
+  },
+  "settings_notifications_test": {
+    "message": "Bildirim Testi"
+  },
+  "settings_notifications_toastPosition": {
+    "message": "Toast konumu"
+  },
+  "settings_notifications_positionTopRight": {
+    "message": "Sağ Üst"
+  },
+  "settings_notifications_positionTopLeft": {
+    "message": "Sol Üst"
+  },
+  "settings_notifications_positionBottomRight": {
+    "message": "Sağ Alt"
+  },
+  "settings_notifications_positionBottomLeft": {
+    "message": "Sol Alt"
+  },
+  "settings_format_title": {
+    "message": "Bildirim Formatı"
+  },
+  "settings_format_chatName": {
+    "message": "Chat/Grup adını göster"
+  },
+  "settings_format_senderName": {
+    "message": "Gönderen adını göster"
+  },
+  "settings_format_messagePreview": {
+    "message": "Mesaj önizlemesi göster"
+  },
+  "settings_format_matchedKeyword": {
+    "message": "Eşleşen kelimeyi göster"
+  },
+  "settings_appearance_title": {
+    "message": "Görünüm"
+  },
+  "settings_appearance_theme": {
+    "message": "Tema"
+  },
+  "settings_appearance_themeSystem": {
+    "message": "Sistem"
+  },
+  "settings_appearance_themeLight": {
+    "message": "Açık"
+  },
+  "settings_appearance_themeDark": {
+    "message": "Koyu"
+  },
+  "settings_data_title": {
+    "message": "Veri Yönetimi"
+  },
+  "settings_data_export": {
+    "message": "Dışa Aktar"
+  },
+  "settings_data_import": {
+    "message": "İçe Aktar"
+  },
+  "settings_data_reset": {
+    "message": "Tüm Verileri Sıfırla"
+  },
+  "settings_data_resetConfirm": {
+    "message": "TÜM veriler silinecek ve varsayılanlara dönülecek. Emin misiniz?"
+  },
+  "settings_data_exported": {
+    "message": "Veriler dışa aktarıldı"
+  },
+  "settings_data_imported": {
+    "message": "Veriler başarıyla içe aktarıldı"
+  },
+  "settings_data_importError": {
+    "message": "Geçersiz dosya formatı"
+  },
+  "settings_data_fileError": {
+    "message": "Dosya okunamadı"
+  },
+  "settings_data_resetDone": {
+    "message": "Tüm veriler sıfırlandı"
+  },
+  "settings_developer_title": {
+    "message": "Geliştirici"
+  },
+  "settings_developer_debugMode": {
+    "message": "Debug modu"
+  },
+  "settings_developer_clearCache": {
+    "message": "Mesaj Önbelleğini Temizle"
+  },
+  "settings_developer_cacheCleared": {
+    "message": "Mesaj önbelleği temizlendi"
+  },
+  "sounds_notification": {
+    "message": "Varsayılan"
+  },
+  "sounds_alert": {
+    "message": "Uyarı"
+  },
+  "sounds_subtle": {
+    "message": "Hafif"
+  },
+  "sounds_chime": {
+    "message": "Melodi"
+  },
+  "sounds_ping": {
+    "message": "Ping"
+  },
+  "sounds_pop": {
+    "message": "Pop"
+  },
+  "sounds_bell": {
+    "message": "Zil"
+  },
+  "sounds_rising": {
+    "message": "Yükselen"
+  },
+  "sounds_danger": {
+    "message": "Tehlike"
+  },
+  "sounds_preview": {
+    "message": "Sesi önizle"
+  },
+  "snooze_minutes15": {
+    "message": "15 dakika"
+  },
+  "snooze_minutes30": {
+    "message": "30 dakika"
+  },
+  "snooze_hour1": {
+    "message": "1 saat"
+  },
+  "snooze_hours2": {
+    "message": "2 saat"
+  },
+  "snooze_cancel": {
+    "message": "İptal Et"
+  },
+  "snooze_remaining": {
+    "message": "$1 dk kaldı",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "snooze_activated": {
+    "message": "$1 dakika susturuldu",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "snooze_cancelled": {
+    "message": "Susturma iptal edildi"
+  },
+  "test_sending": {
+    "message": "Bildirim gönderiliyor..."
+  },
+  "test_success": {
+    "message": "Test bildirimi gönderildi! Sistem bildirimlerini kontrol edin."
+  },
+  "test_error": {
+    "message": "Bildirim gönderilemedi"
+  },
+  "common_error": {
+    "message": "Hata"
+  },
+  "common_back": {
+    "message": "Geri"
+  },
+  "common_save": {
+    "message": "Kaydet"
+  },
+  "common_userId": {
+    "message": "ID"
+  },
+  "toast_userIdCopied": {
+    "message": "ID kopyalandı!"
+  },
+  "toast_chatPrefix": {
+    "message": "içinde"
+  },
+  "notification_testMessage": {
+    "message": "Bu bir test bildirimidir"
+  },
+  "status_error": {
+    "message": "Hata"
+  },
+  "status_noTabs": {
+    "message": "Telegram sekmesi yok"
+  },
+  "status_tabsActive": {
+    "message": "$1/$2 sekme aktif",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "status_unknown": {
+    "message": "Bilinmeyen chat"
+  },
+  "status_andMore": {
+    "message": "... ve $1 diğer",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "rules_title": {
+    "message": "Kurallar"
+  },
+  "rules_add": {
+    "message": "Kural Ekle"
+  },
+  "rules_edit": {
+    "message": "Kuralı Düzenle"
+  },
+  "rules_empty": {
+    "message": "Henüz kural yok. Başlamak için bir tane ekleyin!"
+  },
+  "rules_name": {
+    "message": "Kural Adı"
+  },
+  "rules_namePlaceholder": {
+    "message": "Örn: Acil Bildirimler"
+  },
+  "rules_keywords": {
+    "message": "Kelimeler"
+  },
+  "rules_keywordsHint": {
+    "message": "Her satıra bir kelime"
+  },
+  "rules_users": {
+    "message": "Kullanıcılar"
+  },
+  "rules_usersHint": {
+    "message": "İzlenecek kullanıcıları ekleyin"
+  },
+  "rules_chats": {
+    "message": "Chatler"
+  },
+  "rules_chatsHint": {
+    "message": "Tüm chatler için boş bırakın"
+  },
+  "rules_sound": {
+    "message": "Ses"
+  },
+  "rules_color": {
+    "message": "Renk"
+  },
+  "rules_enabled": {
+    "message": "Etkin"
+  },
+  "rules_delete": {
+    "message": "Sil"
+  },
+  "rules_deleteConfirm": {
+    "message": "Bu kural silinsin mi?"
+  },
+  "rules_allChats": {
+    "message": "Tüm chatler"
+  },
+  "rules_deleted": {
+    "message": "Kural silindi"
+  },
+  "rules_added": {
+    "message": "Kural eklendi"
+  },
+  "rules_updated": {
+    "message": "Kural güncellendi"
+  },
+  "rules_enterName": {
+    "message": "Lütfen kural adı girin"
+  },
+  "rules_addUser": {
+    "message": "Kullanıcı Ekle"
+  },
+  "rules_addChat": {
+    "message": "Chat Ekle"
+  },
+  "rules_userPlaceholder": {
+    "message": "Görünen ad veya User ID"
+  },
+  "rules_chatPlaceholder": {
+    "message": "Chat/Grup adı"
+  },
+  "rules_noKeywordsOrUsers": {
+    "message": "En az bir kelime veya kullanıcı ekleyin"
+  },
+  "rules_userExists": {
+    "message": "Kullanıcı zaten ekli"
+  },
+  "rules_chatExists": {
+    "message": "Chat zaten ekli"
+  },
+  "rules_selectType": {
+    "message": "Kural Tipi Seç"
+  },
+  "rules_ruleType": {
+    "message": "Kural Tipi"
+  },
+  "rules_keywordRule": {
+    "message": "Kelime Kuralı"
+  },
+  "rules_keywordRuleDesc": {
+    "message": "Belirli kelimeler mesajlarda göründüğünde bildirim al"
+  },
+  "rules_userRule": {
+    "message": "Kullanıcı Kuralı"
+  },
+  "rules_userRuleDesc": {
+    "message": "Belirli kullanıcılar mesaj gönderdiğinde bildirim al"
+  },
+  "rules_keywordsPlaceholder": {
+    "message": "örn: acil, toplantı, @etiket"
+  },
+  "rules_usersPlaceholder": {
+    "message": "örn: Ali Yılmaz veya 123456789"
+  },
+  "rules_noKeywords": {
+    "message": "En az bir kelime ekleyin"
+  },
+  "rules_noUsers": {
+    "message": "En az bir kullanıcı ekleyin"
+  },
+  "rules_sectionConditions": {
+    "message": "Koşullar"
+  },
+  "rules_sectionFilters": {
+    "message": "Filtreler"
+  },
+  "rules_sectionNotification": {
+    "message": "Bildirim"
+  },
+  "rules_matchAny": {
+    "message": "VEYA"
+  },
+  "rules_matchAll": {
+    "message": "VE"
+  },
+  "activeTabs_noTabs": {
+    "message": "Açık Telegram sekmesi yok"
+  },
+  "activeTabs_clickToFocus": {
+    "message": "Odaklanmak için tıklayın"
+  },
+  "help_pageTitle": {
+    "message": "Telegram Keyword Alert - Yardım"
+  },
+  "help_title": {
+    "message": "Telegram Keyword Alert'e Hoş Geldiniz"
+  },
+  "help_subtitle": {
+    "message": "Telegram Web'de belirli kelimeler veya kullanıcılar göründüğünde bildirim alın"
+  },
+  "help_gettingStarted": {
+    "message": "Başlangıç"
+  },
+  "help_step1Title": {
+    "message": "Telegram Web'i Açın"
+  },
+  "help_step1Prefix": {
+    "message": ""
+  },
+  "help_step1Suffix": {
+    "message": " adresine gidin ve giriş yapın."
+  },
+  "help_step2Title": {
+    "message": "Bildirimleri Etkinleştirin"
+  },
+  "help_step2Desc": {
+    "message": "Uyarı almak için tarayıcı bildirimlerine izin verin."
+  },
+  "help_enableNotifications": {
+    "message": "Bildirimleri Etkinleştir"
+  },
+  "help_notificationsEnabled": {
+    "message": "Bildirimler etkin"
+  },
+  "help_notificationsBlocked": {
+    "message": "Tarayıcı tarafından engellendi"
+  },
+  "help_notificationsBlockedHint": {
+    "message": "Tarayıcı ayarlarından etkinleştirin"
+  },
+  "help_notificationsUnsupported": {
+    "message": "Bu tarayıcıda desteklenmiyor"
+  },
+  "help_notificationsTestMessage": {
+    "message": "Bildirimler artık etkin!"
+  },
+  "help_step3Title": {
+    "message": "Kural Ekleyin"
+  },
+  "help_step3Desc": {
+    "message": "Eklenti ikonuna tıklayın ve kelimeler veya kullanıcılar için kurallar oluşturun."
+  },
+  "help_features": {
+    "message": "Özellikler"
+  },
+  "help_featureKeywords": {
+    "message": "Kelime Grupları"
+  },
+  "help_featureKeywordsDesc": {
+    "message": "Kelimelerinizi düzenlemek için farklı renk ve seslerle gruplar oluşturun."
+  },
+  "help_featureUsers": {
+    "message": "Kullanıcı İzleme"
+  },
+  "help_featureUsersDesc": {
+    "message": "Belirli kullanıcılar mesaj gönderdiğinde bildirim alın."
+  },
+  "help_featureChats": {
+    "message": "Chat Filtreleme"
+  },
+  "help_featureChatsDesc": {
+    "message": "Hangi chatleri izleyeceğinizi seçin veya tüm chatleri izleyin."
+  },
+  "help_featureSnooze": {
+    "message": "Susturma"
+  },
+  "help_featureSnoozeDesc": {
+    "message": "Odaklanmanız gerektiğinde tüm bildirimleri geçici olarak durdurun."
+  },
+  "help_dataManagement": {
+    "message": "Veri Yönetimi"
+  },
+  "help_dataManagementDesc": {
+    "message": "Ayarlarınızı yedeklemek için dışa aktarın, bir yedekten içe aktarın veya varsayılanlara sıfırlayın."
+  },
+  "help_links": {
+    "message": "Bağlantılar"
+  },
+  "help_github": {
+    "message": "GitHub Deposu"
+  },
+  "help_issues": {
+    "message": "Sorun Bildir / Geri Bildirim"
+  },
+  "help_version": {
+    "message": "Sürüm 2.0.0"
+  }
+}
