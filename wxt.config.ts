@@ -13,6 +13,9 @@ export default defineConfig({
       gecko: {
         id: 'telegram-keyword-alert@example.com',
         strict_min_version: '109.0',
+        // Firefox data collection disclosure (Nov 2025+)
+        // Type not yet in WXT, using assertion
+        ...({ data_collection_permissions: { required: ['none'], optional: [] } } as Record<string, unknown>),
       },
     },
   },
