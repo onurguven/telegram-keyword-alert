@@ -4,7 +4,6 @@
 
 import { highlightKeywords } from '@/utils/helpers';
 import { UI, TIMING, DEFAULTS } from '@/constants';
-import { i18n } from '#i18n';
 import type { RichToastOptions, ToastPosition } from '@/types/toast';
 
 // ============== Header Builder ==============
@@ -20,7 +19,7 @@ function createHeader(data: RichToastOptions): HTMLElement {
     senderEl.textContent = data.sender;
     const chatEl = document.createElement('span');
     chatEl.className = 'tka-toast__chat';
-    chatEl.textContent = `${i18n.t('toast_chatPrefix')} ${data.chat}`;
+    chatEl.textContent = `${browser.i18n.getMessage('toast_chatPrefix')} ${data.chat}`;
     header.appendChild(senderEl);
     header.appendChild(chatEl);
   } else {

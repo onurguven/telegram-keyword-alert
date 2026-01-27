@@ -7,7 +7,6 @@ import { TIMING, DOM, UI } from '@/constants';
 import { ATTR, getCachedSelectors, getAttr, isProfilePanel, querySelector } from '@/utils/telegram';
 import { ToastManager } from '@/components/toast';
 import { logError } from '@/utils/error-handling';
-import { i18n } from '#i18n';
 
 // ============== HELPER FUNCTIONS ==============
 
@@ -52,7 +51,7 @@ function createUserIdRow(userId: string): HTMLElement {
       .writeText(userId)
       .then(() => {
         ToastManager.show({
-          text: i18n.t('toast_userIdCopied'),
+          text: browser.i18n.getMessage('toast_userIdCopied'),
           color: UI.SUCCESS_COLOR,
         });
       })
