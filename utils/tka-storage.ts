@@ -91,22 +91,23 @@ export const Storage = {
     history: HistoryEntry[];
     badgeCount: number;
   }> {
-    const [rules, settings, history, badgeCount] = await Promise.all([
+    const [rawRules, settings, history, badgeCount] = await Promise.all([
       rulesStorage.getValue(),
       settingsStorage.getValue(),
       historyStorage.getValue(),
       badgeCountStorage.getValue(),
     ]);
-    return { rules, settings, history, badgeCount };
+    return { rules: structuredClone(rawRules), settings, history, badgeCount };
   },
 
   // ============== Rules ==============
 
   /**
-   * Get all rules
+   * Get all rules (returns deep copies to prevent reference sharing)
    */
   async getRules(): Promise<Rule[]> {
-    return rulesStorage.getValue();
+    const rules = await rulesStorage.getValue();
+    return structuredClone(rules);
   },
 
   /**
@@ -118,16 +119,16 @@ export const Storage = {
       id: 'rule-' + Date.now() + '-' + Math.random().toString(36).substring(2, 9),
       name: rule.name || 'New Rule',
       enabled: true,
-      conditions: rule.conditions || [],
+      conditions: rule.conditions ? structuredClone(rule.conditions) : [],
       matchMode: rule.matchMode || 'any',
-      chats: rule.chats || [],
+      chats: rule.chats ? structuredClone(rule.chats) : [],
       sound: rule.sound || 'notification',
       color: rule.color || '#3390ec',
       createdAt: Date.now(),
     };
     rules.push(newRule);
     await rulesStorage.setValue(rules);
-    return newRule;
+    return structuredClone(newRule);
   },
 
   /**
@@ -137,9 +138,10 @@ export const Storage = {
     const rules = await rulesStorage.getValue();
     const index = rules.findIndex((r: Rule) => r.id === ruleId);
     if (index !== -1) {
-      rules[index] = { ...rules[index], ...updates };
+      // Deep clone updates to prevent reference sharing
+      rules[index] = structuredClone({ ...rules[index], ...updates });
       await rulesStorage.setValue(rules);
-      return rules[index];
+      return structuredClone(rules[index]);
     }
     return null;
   },
@@ -166,11 +168,12 @@ export const Storage = {
   },
 
   /**
-   * Get rule by ID
+   * Get rule by ID (returns a deep copy to prevent reference sharing)
    */
   async getRule(ruleId: string): Promise<Rule | null> {
     const rules = await rulesStorage.getValue();
-    return rules.find((r: Rule) => r.id === ruleId) || null;
+    const rule = rules.find((r: Rule) => r.id === ruleId);
+    return rule ? structuredClone(rule) : null;
   },
 
   // ============== Settings ==============
