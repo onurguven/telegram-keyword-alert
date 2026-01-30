@@ -2,7 +2,7 @@
   "name": "telegram-keyword-alert",
   "description": "Keyword and user-based notifications for Telegram Web",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "wxt",
