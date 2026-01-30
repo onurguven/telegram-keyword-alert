@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="Version">
+  <img src="https://img.shields.io/badge/version-1.0.1-blue" alt="Version">
   <img src="https://img.shields.io/badge/manifest-v3-green" alt="Manifest V3">
   <img src="https://img.shields.io/badge/license-MIT-gray" alt="License">
 </p>
@@ -35,11 +35,11 @@
 ### From Store
 
 <p align="center">
-  <a href="#">
-    <img src="https://img.shields.io/badge/Chrome-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Web Store">
+  <a href="#" target="_blank">
+    <img src="https://img.shields.io/badge/Chrome-Coming_Soon-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Web Store">
   </a>
   &nbsp;&nbsp;
-  <a href="#">
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/telegram-keyword-alert/" target="_blank">
     <img src="https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefoxbrowser&logoColor=white" alt="Firefox Add-ons">
   </a>
 </p>
